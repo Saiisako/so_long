@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: skock <skock@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/23 17:29:39 by skock             #+#    #+#             */
+/*   Updated: 2025/01/23 18:02:11 by skock            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "so_long.h"
+
+void	print_end_str(t_game *game)
+{
+	if (game->end->end_killer == true)
+		ft_printf("%s\n", END_KILLER);
+	else if (game->end->end_game_over == true)
+		ft_printf("%s\n", END_GAME_OVER);
+	else if (game->end->end_win == true)
+		ft_printf("%s\n", END_WIN);
+}
+
+void	print_map(char **map)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			ft_printf("%c", map[i][j]);
+			j++;
+		}
+		i++;
+		ft_printf("\n");
+	}
+}
